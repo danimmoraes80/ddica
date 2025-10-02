@@ -1,8 +1,0 @@
-Permite que todos os robôs acessem todas as páginas
-User-agent: *
-
-Impede o acesso à área administrativa (segurança)
-Disallow: /admin/
-
-Indica a localização do mapa do siteSitemap: 
-https://www.google.com/search?q=https://ddicavidafinanceira.com.br/sitemap.xml
