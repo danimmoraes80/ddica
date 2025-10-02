@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - DDica</title>
+    <meta name="description" content="Entenda como a DDica coleta, usa e protege seus dados. Nosso compromisso com a sua privacidade e segurança.">
+    <meta name="author" content="DDica">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Lato', sans-serif; background-color: #FFFFFF; color: #334155; }
+        .font-title { font-family: 'Poppins', sans-serif; }
+        .text-balance { text-wrap: balance; }
+        .cta-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+        }
+        .gradient-logo {
+            background: linear-gradient(90deg, #0ea5e9 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-btn {
+            background: linear-gradient(90deg, #0ea5e9 0%, #10b981 100%);
+        }
+        /* Estilos para o conteúdo da política */
+        .policy-content h2 { font-size: 1.875rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #1e293b; font-family: 'Poppins', sans-serif; }
+        .policy-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #334155; font-family: 'Poppins', sans-serif; }
+        .policy-content p { margin-bottom: 1.25rem; line-height: 1.75; }
+        .policy-content ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.25rem; }
+        .policy-content li { margin-bottom: 0.5rem; }
+        .policy-content a { color: #0ea5e9; text-decoration: underline; }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <div class="flex flex-col min-h-screen">
+
+        <!-- Menu Principal -->
+        <nav class="w-full bg-white/90 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-extrabold gradient-logo tracking-tight font-title">Ddica</a>
+                <!-- Menu Desktop -->
+                <ul class="hidden lg:flex gap-6 items-center font-semibold text-slate-600 text-sm">
+                    <li><a href="triagem-financeira.html" class="hover:text-sky-600 transition">Triagem financeira</a></li>
+                    <li><a href="metodo-phd.html" class="hover:text-sky-600 transition">Método PHD</a></li>
+                    <li><a href="sobre-nos.html" class="hover:text-sky-600 transition">Sobre nós</a></li>
+                    <li><a href="simuladores.html" class="hover:text-sky-600 transition">Simuladores</a></li>
+                    <li><a href="novidades.html" class="hover:text-sky-600 transition">Novidades</a></li>
+                </ul>
+                <a href="https://wa.me/5511966479058?text=Olá,%20quero%20falar%20com%20um%20especialista%20da%20Ddica%20💬" target="_blank" class="hidden lg:inline-block gradient-btn text-white font-bold px-5 py-2.5 rounded-full shadow-lg hover:scale-105 transition-all cta-button text-sm">
+                    Falar com especialista
+                </a>
+                <!-- Menu Mobile (Hamburger) -->
+                <button id="mobile-menu-button" class="lg:hidden focus:outline-none">
+                    <svg class="w-8 h-8 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-8 6h8" /></svg>
+                </button>
+            </div>
+            <!-- Painel do Menu Mobile -->
+            <div id="mobile-menu" class="hidden bg-white shadow-sm lg:hidden">
+                <ul class="px-6 py-4 flex flex-col gap-4">
+                    <li><a href="triagem-financeira.html" class="block hover:text-sky-600 transition">Triagem financeira</a></li>
+                    <li><a href="metodo-phd.html" class="block hover:text-sky-600 transition">Método PHD</a></li>
+                    <li><a href="sobre-nos.html" class="block hover:text-sky-600 transition">Sobre nós</a></li>
+                    <li><a href="simuladores.html" class="block hover:text-sky-600 transition">Simuladores</a></li>
+                    <li><a href="novidades.html" class="block hover:text-sky-600 transition">Novidades</a></li>
+                    <li><a href="https://wa.me/5511966479058?text=Olá,%20quero%20falar%20com%20um%20especialista%20da%20Ddica%20💬" target="_blank" class="w-full text-center gradient-btn text-white font-bold py-3 rounded-full shadow-lg">Falar com especialista</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="flex-grow bg-white">
+            <div class="container mx-auto px-6 py-16 max-w-4xl">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 font-title text-center">Política de Privacidade</h1>
+                <p class="text-center text-slate-500 mt-2">Última atualização: 15 de Agosto de 2025</p>
+
+                <div class="mt-12 policy-content">
+                    <p>A sua privacidade é de extrema importância para a <strong>Ddica</strong>. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos as informações pessoais dos utilizadores do nosso site e serviços, em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).</p>
+
+                    <h2>1. Informações que Coletamos</h2>
+                    <p>Coletamos informações que você nos fornece diretamente para a prestação dos nossos serviços e melhoria da sua experiência:</p>
+                    <ul>
+                        <li><strong>Dados de Contato:</strong> Nome, e-mail e número de telefone/WhatsApp, fornecidos através dos nossos formulários de contato, pop-ups ou ao se inscrever na nossa newsletter.</li>
+                        <li><strong>Dados da Triagem Financeira:</strong> As respostas fornecidas em nossos questionários e simuladores, que podem incluir informações sobre sua carreira, renda, patrimônio e objetivos. Estes dados são tratados com o mais alto nível de confidencialidade.</li>
+                        <li><strong>Dados de Navegação:</strong> Informações coletadas automaticamente através de cookies, como seu endereço IP, tipo de navegador, páginas visitadas e tempo de permanência no site, de forma anónima, para fins estatísticos.</li>
+                    </ul>
+
+                    <h2>2. Como Usamos Suas Informações</h2>
+                    <p>As informações coletadas são utilizadas para as seguintes finalidades:</p>
+                    <ul>
+                        <li><strong>Prestação de Serviços:</strong> Para realizar o diagnóstico financeiro, entrar em contato para agendar conversas e fornecer a consultoria personalizada.</li>
+                        <li><strong>Comunicação:</strong> Para enviar comunicações importantes, como atualizações sobre nossos serviços, respostas a suas solicitações e envio de materiais educativos, como o checklist e a newsletter.</li>
+                        <li><strong>Melhoria do Site:</strong> Para analisar como os utilizadores interagem com nosso site e ferramentas, a fim de otimizar a usabilidade e a relevância do nosso conteúdo.</li>
+                        <li><strong>Segurança:</strong> Para proteger nosso site e nossos utilizadores contra fraudes e atividades não autorizadas.</li>
+                    </ul>
+
+                    <h2>3. Compartilhamento de Dados</h2>
+                    <p><strong>A Ddica não vende, aluga ou comercializa suas informações pessoais com terceiros.</strong></p>
+                    <p>Podemos compartilhar seus dados apenas nas seguintes circunstâncias:</p>
+                    <ul>
+                        <li><strong>Com seu consentimento explícito:</strong> Para conectar você com parceiros do nosso ecossistema (contadores, advogados, etc.), sempre com sua prévia autorização.</li>
+                        <li><strong>Prestadores de Serviço:</strong> Com empresas que nos auxiliam na operação do nosso negócio, como a plataforma de automação de e-mail (Brevo) e o serviço de armazenamento em nuvem (Firebase), que estão contratualmente obrigadas a manter a confidencialidade e a segurança dos seus dados.</li>
+                        <li><strong>Obrigações Legais:</strong> Se formos obrigados por lei ou por uma ordem judicial a divulgar informações.</li>
+                    </ul>
+
+                    <h2>4. Armazenamento e Segurança dos Dados</h2>
+                    <p>Seus dados são armazenados em serviços de nuvem seguros, como o Google Firebase, que utilizam as melhores práticas de segurança do mercado para proteger as informações contra acesso, alteração ou destruição não autorizados. Adotamos medidas técnicas e organizacionais para garantir a integridade e a confidencialidade dos seus dados.</p>
+
+                    <h2>5. Seus Direitos como Titular dos Dados</h2>
+                    <p>De acordo com a LGPD, você tem o direito de:</p>
+                    <ul>
+                        <li>Confirmar a existência de tratamento dos seus dados.</li>
+                        <li>Aceder aos seus dados.</li>
+                        <li>Corrigir dados incompletos, inexatos ou desatualizados.</li>
+                        <li>Solicitar a anonimização, bloqueio ou eliminação de dados desnecessários.</li>
+                        <li>Revogar o seu consentimento a qualquer momento.</li>
+                    </ul>
+                    <p>Para exercer qualquer um desses direitos, entre em contato conosco através do e-mail: <a href="mailto:contato@ddica.com.br">contato@ddica.com.br</a>.</p>
+
+                    <h2>6. Cookies</h2>
+                    <p>Utilizamos cookies para melhorar a sua experiência de navegação. São pequenos ficheiros de texto que nos ajudam a entender as preferências dos utilizadores e a otimizar o site. Você pode gerir ou desativar os cookies através das configurações do seu navegador.</p>
+
+                    <h2>7. Alterações a esta Política</h2>
+                    <p>Podemos atualizar esta Política de Privacidade periodicamente. A versão mais recente estará sempre disponível nesta página, com a data da última atualização no topo. Recomendamos que você reveja esta política regularmente.</p>
+
+                    <h2>8. Contato</h2>
+                    <p>Se tiver qualquer dúvida sobre esta Política de Privacidade ou sobre como tratamos seus dados, por favor, entre em contato:</p>
+                    <p><strong>Ddica - Planejamento de Vida e Finanças</strong><br>
+                    E-mail: <a href="mailto:contato@ddica.com.br">contato@ddica.com.br</a></p>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Rodapé -->
+        <footer class="bg-slate-900 text-white">
+            <div class="container mx-auto px-6 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
+                    <div class="lg:col-span-2 flex flex-col items-center md:items-start">
+                        <h3 class="text-3xl font-extrabold tracking-tight gradient-logo inline-block font-title">Ddica</h3>
+                        <p class="mt-4 text-slate-400 max-w-md">Cuidamos do seu futuro para que você possa focar no que faz de melhor.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white tracking-wider font-title">Navegação</h4>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="triagem-financeira.html" class="text-slate-400 hover:text-sky-400 transition">Triagem financeira</a></li>
+                            <li><a href="metodo-phd.html" class="text-slate-400 hover:text-sky-400 transition">Método PHD</a></li>
+                            <li><a href="sobre-nos.html" class="text-slate-400 hover:text-sky-400 transition">Sobre nós</a></li>
+                            <li><a href="simuladores.html" class="text-slate-400 hover:text-sky-400 transition">Simuladores</a></li>
+                            <li><a href="novidades.html" class="text-slate-400 hover:text-sky-400 transition">Novidades</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white tracking-wider font-title">Institucional</h4>
+                        <ul class="mt-4 space-y-2">
+                            <li><a href="politica-de-privacidade.html" class="text-slate-400 hover:text-sky-400 transition">Política de privacidade</a></li>
+                            <li><a href="termos-de-uso.html" class="text-slate-400 hover:text-sky-400 transition">Termos de uso</a></li>
+                            <li><a href="cookies.html" class="text-slate-400 hover:text-sky-400 transition">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-12 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm"><p>&copy; 2025 Ddica. Todos os direitos reservados. Uma consultoria de vida e finanças para médicos.</p></div>
+            </div>
+        </footer>
+
+    </div>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if(mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+        }
+    });
+</script>
+</body>
+</html>

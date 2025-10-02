@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novidades e Análises para Médicos - DDica</title>
+    <meta name="description" content="Artigos, análises e dicas sobre finanças, carreira e qualidade de vida, escritos especialmente para a realidade do médico.">
+    <meta name="keywords" content="blog finanças médicos, novidades medicina, carreira médica, investimentos para médicos">
+    <meta name="author" content="DDica">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Lato', sans-serif; background-color: #f8fafc; color: #334155; }
+        .font-title { font-family: 'Poppins', sans-serif; }
+        .text-balance { text-wrap: balance; }
+        .cta-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+        }
+        .gradient-logo {
+            background: linear-gradient(90deg, #0ea5e9 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-btn {
+            background: linear-gradient(90deg, #0ea5e9 0%, #10b981 100%);
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; opacity: 0; }
+        /* Estilos para o conteúdo do post */
+        .post-content h2 { font-size: 1.875rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #1e293b; font-family: 'Poppins', sans-serif; }
+        .post-content p { margin-bottom: 1.25rem; line-height: 1.75; }
+        .post-content ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.25rem; }
+        .post-content li { margin-bottom: 0.5rem; }
+        .post-content a { color: #0ea5e9; text-decoration: underline; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+    <div class="flex flex-col min-h-screen">
+
+        <!-- Menu Principal -->
+        <nav class="w-full bg-white/90 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-extrabold gradient-logo tracking-tight font-title">Ddica</a>
+                <!-- Menu Desktop -->
+                <ul class="hidden lg:flex gap-6 items-center font-semibold text-slate-600 text-sm">
+                    <li><a href="/triagem-financeira" class="hover:text-sky-600 transition">Triagem financeira</a></li>
+                    <li><a href="/metodo-phd" class="hover:text-sky-600 transition">Método PHD</a></li>
+                    <li><a href="/sobre-nos" class="hover:text-sky-600 transition">Sobre nós</a></li>
+                    <li><a href="/simuladores" class="hover:text-sky-600 transition">Simuladores</a></li>
+                    <li><a href="/novidades" class="text-sky-600 border-b-2 border-sky-600 pb-1 font-bold">Novidades</a></li>
+                </ul>
+                <a href="https://wa.me/5511966479058?text=Olá,%20quero%20falar%20com%20um%20especialista%20da%20Ddica%20💬" target="_blank" class="hidden lg:inline-block gradient-btn text-white font-bold px-5 py-2.5 rounded-full shadow-lg hover:scale-105 transition-all cta-button text-sm">
+                    Falar com especialista
+                </a>
+                <!-- Menu Mobile (Hamburger) -->
+                <button id="mobile-menu-button" class="lg:hidden focus:outline-none">
+                    <svg class="w-8 h-8 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-8 6h8" /></svg>
+                </button>
+            </div>
+            <!-- Painel do Menu Mobile -->
+            <div id="mobile-menu" class="hidden bg-white shadow-sm lg:hidden">
+                <ul class="px-6 py-4 flex flex-col gap-4">
+                    <li><a href="/triagem-financeira" class="block hover:text-sky-600 transition">Triagem financeira</a></li>
+                    <li><a href="/metodo-phd" class="block hover:text-sky-600 transition">Método PHD</a></li>
+                    <li><a href="/sobre-nos" class="block hover:text-sky-600 transition">Sobre nós</a></li>
+                    <li><a href="/simuladores" class="block hover:text-sky-600 transition">Simuladores</a></li>
+                    <li><a href="/novidades" class="block text-sky-600 font-bold">Novidades</a></li>
+                    <li><a href="https://wa.me/5511966479058?text=Olá,%20quero%20falar%20com%20um%20especialista%20da%20Ddica%20💬" target="_blank" class="w-full text-center gradient-btn text-white font-bold py-3 rounded-full shadow-lg">Falar com especialista</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="flex-grow">
+            <!-- Container principal que alterna entre a lista de posts e um post individual -->
+            <div id="main-content" class="container mx-auto px-6 py-12">
+                <!-- A ser preenchido dinamicamente pelo JavaScript -->
+            </div>
+        </main>
+        
+        <!-- Rodapé -->
+        <footer class="bg-slate-900 text-white">
+            <div class="container mx-auto px-6 py-12">
+                <div class="grid grid-cols-1 lg:grid-cols-10 gap-10">
+                    <div class="lg:col-span-4 text-center lg:text-left"><h3 class="text-3xl font-extrabold tracking-tight gradient-logo inline-block font-title">Ddica</h3><p class="mt-4 text-slate-400 max-w-md mx-auto lg:mx-0">Cuidamos do seu futuro para que você possa focar no que faz de melhor.</p></div>
+                    <div class="lg:col-span-2 text-center lg:text-left"><h4 class="font-bold text-lg text-white tracking-wider font-title">Navegação</h4><ul class="mt-4 space-y-2"><li><a href="/triagem-financeira" class="text-slate-400 hover:text-sky-400 transition">Triagem financeira</a></li><li><a href="/metodo-phd" class="text-slate-400 hover:text-sky-400 transition">Método PHD</a></li><li><a href="/sobre-nos" class="text-slate-400 hover:text-sky-400 transition">Sobre nós</a></li><li><a href="/simuladores" class="text-slate-400 hover:text-sky-400 transition">Simuladores</a></li><li><a href="/novidades" class="text-slate-400 hover:text-sky-400 transition">Novidades</a></li></ul></div>
+                    <div class="lg:col-span-2 text-center lg:text-left"><h4 class="font-bold text-lg text-white tracking-wider font-title">Institucional</h4><ul class="mt-4 space-y-2"><li><a href="/politica-de-privacidade" class="text-slate-400 hover:text-sky-400 transition">Política de privacidade</a></li><li><a href="/termos-de-uso" class="text-slate-400 hover:text-sky-400 transition">Termos de uso</a></li><li><a href="/cookies" class="text-slate-400 hover:text-sky-400 transition">Cookies</a></li></ul></div>
+                    <div class="lg:col-span-2 text-center lg:text-left"><h4 class="font-bold text-lg text-white tracking-wider font-title">Contato</h4><ul class="mt-4 space-y-3 text-slate-400"><li class="flex items-center gap-2 justify-center lg:justify-start"><i class="fa-solid fa-envelope fa-fw"></i><span>contato@ddica.com.br</span></li><li class="flex items-center gap-2 justify-center lg:justify-start"><i class="fa-brands fa-whatsapp fa-fw"></i><span>(11) 96647-9058</span></li></ul><div class="mt-4 flex gap-4 justify-center lg:justify-start"><a href="https://www.linkedin.com/company/ddica" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-slate-400 hover:text-sky-400 transition text-2xl"><i class="fa-brands fa-linkedin"></i></a><a href="https://www.instagram.com/ddicasaudefinanceira/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-slate-400 hover:text-sky-400 transition text-2xl"><i class="fa-brands fa-instagram"></i></a></div></div>
+                </div>
+                <div class="mt-12 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm"><p>&copy; 2025 Ddica. Todos os direitos reservados. Uma consultoria de vida e finanças para médicos.</p></div>
+            </div>
+        </footer>
+
+    </div>
+    
+<script type="module">
+    // ====================================================================================
+    // ÁREA DE EDIÇÃO FÁCIL PARA A EQUIPA
+    // ====================================================================================
+
+    // PASSO 1: Adicione as informações do novo post aqui (copie e cole o bloco de um post existente)
+    // O post mais recente deve ficar sempre no topo da lista.
+    const postsData = [
+        {
+            id: 3,
+            title: "Otimização Tributária: Como Pagar Menos Impostos Legalmente",
+            author: "Equipa Ddica",
+            date: "10 de Agosto de 2025",
+            imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200",
+            description: "A carga tributária é uma das maiores dores do médico. Entenda as diferenças cruciais entre atuar como PF e PJ e descubra como uma estrutura otimizada pode economizar dezenas de milhares de reais por ano.",
+        },
+        {
+            id: 2,
+            title: "Síndrome de Burnout e Finanças: Qual a Conexão?",
+            author: "Dr. Convidado",
+            date: "28 de Julho de 2025",
+            imageUrl: "https://images.unsplash.com/photo-1550831107-1553da8c8464?q=80&w=1200",
+            description: "A exaustão profissional na medicina tem muitas causas, mas a pressão financeira é um fator subestimado. Descubra como um planeamento de vida pode ser o melhor remédio para o burnout.",
+        },
+        {
+            id: 1,
+            title: "Reserva de Emergência: O Primeiro Passo para a sua Tranquilidade",
+            author: "Equipa Ddica",
+            date: "15 de Julho de 2025",
+            imageUrl: "https://images.unsplash.com/photo-1611926653458-092a42315b17?q=80&w=1200",
+            description: "Muitos médicos, apesar da alta renda, não possuem um colchão de segurança. Entenda por que a reserva de emergência é o alicerce de qualquer planeamento e como construir a sua.",
+        }
+    ];
+
+    // PASSO 2: Adicione o conteúdo HTML completo do novo post aqui.
+    // Use o 'id' do post como chave (ex: `3: \`...\``).
+    const postContents = {
+        1: `
+            <p>Muitos médicos focam em investimentos complexos, mas negligenciam o passo mais fundamental: a reserva de emergência. Ela é o seu "seguro de paz de espírito", um valor guardado para cobrir imprevistos sem que você precise de se endividar ou vender seus investimentos em momentos inoportunos.</p>
+            <h2>Por que é tão crucial para médicos?</h2>
+            <p>A sua capacidade de gerar renda é o seu maior ativo. Um problema de saúde, uma queda inesperada no movimento do consultório ou uma necessidade familiar urgente podem acontecer. A reserva de emergência garante que o seu padrão de vida e seus investimentos de longo prazo não sejam afetados por esses percalços.</p>
+            <h2>Como calcular a sua reserva ideal?</h2>
+            <ul>
+                <li><strong>Calcule seu custo de vida mensal:</strong> Some todas as suas despesas essenciais (moradia, alimentação, saúde, educação, etc.).</li>
+                <li><strong>Multiplique por 6 a 12:</strong> O ideal é ter entre 6 a 12 meses do seu custo de vida guardados.</li>
+                <li><strong>Onde investir:</strong> Este dinheiro precisa de estar num local seguro e com liquidez diária, como um CDB de liquidez diária ou um fundo de renda fixa simples.</li>
+            </ul>
+            <p>Construir essa reserva deve ser a prioridade número um antes de pensar em investimentos mais arrojados. É o alicerce que sustenta todo o seu plano financeiro.</p>
+        `,
+        2: `
+            <p>A Síndrome de Burnout é uma realidade alarmante na comunidade médica, com estudos mostrando que mais de 60% dos profissionais já sentiram os seus efeitos. Embora as causas sejam multifatoriais, a pressão financeira desempenha um papel central e muitas vezes silencioso.</p>
+            <h2>O Ciclo Vicioso: Mais Trabalho, Mais Gastos</h2>
+            <p>A sensação de que é preciso aceitar "mais um plantão" para pagar as contas, manter o padrão de vida ou simplesmente para "não ficar para trás" cria um ciclo de exaustão. A falta de um plano financeiro claro gera uma ansiedade constante sobre o futuro, fazendo com que o descanso pareça um luxo inalcançável.</p>
+            <p>Um planeamento de vida e financeiro atua diretamente na raiz do problema. Ele proporciona clareza sobre o "número mágico" necessário para a sua independência financeira, transformando a meta de trabalhar menos numa possibilidade real e calculada.</p>
+            <p>Cuidar da sua saúde financeira é, em última análise, uma forma de cuidar da sua saúde mental e bem-estar.</p>
+        `,
+        3: `
+            <p>A questão tributária é, sem dúvida, um dos pontos mais sensíveis e complexos na vida financeira de um médico. A sensação de que uma parte significativa do seu esforço vai diretamente para o governo é frustrante, mas a boa notícia é que existem caminhos legais e eficientes para mitigar essa carga.</p>
+            <h2>Pessoa Física vs. Pessoa Jurídica: O Ponto de Partida</h2>
+            <p>Para a maioria dos médicos com uma renda consistente, atuar como Pessoa Jurídica (PJ) é quase sempre a opção mais vantajosa. A tributação na Pessoa Física (PF) pode chegar a 27,5% de Imposto de Renda, além da contribuição ao INSS. Já como PJ, é possível enquadrar-se em regimes tributários muito mais amigáveis.</p>
+            <ul>
+                <li><strong>Simples Nacional (Anexo III):</strong> Para médicos, a alíquota inicial é de 6% sobre o faturamento, desde que a folha de pagamento (pró-labore) represente pelo menos 28% do faturamento (Fator R).</li>
+                <li><strong>Lucro Presumido:</strong> A base de cálculo do imposto é de 32% sobre o faturamento. Sobre essa base, incidem os impostos, resultando numa carga total que geralmente fica entre 13,33% e 16,33%.</li>
+            </ul>
+            <p>A escolha entre um e outro depende de uma análise detalhada do seu faturamento e despesas. É um diagnóstico que pode gerar uma economia imediata e substancial.</p>
+            <h2>Além do Básico: Estratégias de Otimização</h2>
+            <p>Apenas abrir um CNPJ não é suficiente. A verdadeira otimização vem de um planeamento que considera a sua vida como um todo. Isso inclui a definição de um pró-labore estratégico, a distribuição de lucros isenta de IR e o uso inteligente de despesas dedutíveis para reduzir a base de cálculo dos impostos.</p>
+            <p>Na DDica, não apenas ajudamos a escolher o melhor regime, mas criamos um plano contínuo para garantir que você pague o mínimo de imposto possível, sempre dentro da legalidade, liberando mais recursos para seus investimentos e objetivos de vida.</p>
+        `
+    };
+    // ====================================================================================
+    // FIM DA ÁREA DE EDIÇÃO - NÃO ALTERAR O CÓDIGO ABAIXO
+    // ====================================================================================
+
+    const mainContent = document.getElementById('main-content');
+
+    function renderBlogList() {
+        mainContent.innerHTML = ''; // Limpa o conteúdo
+        const featuredPost = postsData[0];
+        const otherPosts = postsData.slice(1);
+
+        const listHTML = `
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 leading-tight font-title">Novidades e Análises</h1>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-600">Artigos, análises e dicas sobre finanças, carreira e qualidade de vida, escritos especialmente para a realidade do médico.</p>
+            </div>
+            ${featuredPost ? `
+            <article class="grid md:grid-cols-2 gap-8 items-center mb-16 bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                <a href="#post-${featuredPost.id}" class="block overflow-hidden rounded-lg">
+                    <img src="${featuredPost.imageUrl}" alt="[Imagem do post ${featuredPost.title}]" class="w-full h-80 object-cover transform hover:scale-105 transition-transform duration-300">
+                </a>
+                <div>
+                    <p class="text-sm text-slate-500">${featuredPost.date} • Por ${featuredPost.author}</p>
+                    <h2 class="text-3xl font-bold text-slate-800 mt-2 mb-4 font-title hover:text-sky-600 transition-colors">
+                        <a href="#post-${featuredPost.id}">${featuredPost.title}</a>
+                    </h2>
+                    <p class="text-slate-600 mb-6">${featuredPost.description}</p>
+                    <a href="#post-${featuredPost.id}" class="font-bold text-sky-600 hover:text-sky-800 transition-colors">Ler artigo completo &rarr;</a>
+                </div>
+            </article>
+            ` : ''}
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                ${otherPosts.map(post => `
+                <article class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden flex flex-col">
+                    <a href="#post-${post.id}" class="block">
+                        <img src="${post.imageUrl}" alt="[Imagem do post ${post.title}]" class="w-full h-56 object-cover transform hover:scale-105 transition-transform duration-300">
+                    </a>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-sm text-slate-500">${post.date} • Por ${post.author}</p>
+                        <h3 class="text-xl font-bold text-slate-800 mt-2 mb-3 font-title flex-grow hover:text-sky-600 transition-colors">
+                            <a href="#post-${post.id}">${post.title}</a>
+                        </h3>
+                        <a href="#post-${post.id}" class="font-bold text-sky-600 hover:text-sky-800 transition-colors self-start mt-4">Ler artigo &rarr;</a>
+                    </div>
+                </article>
+                `).join('')}
+            </div>
+        `;
+        mainContent.innerHTML = listHTML;
+    }
+
+    function renderSinglePost(postId) {
+        mainContent.innerHTML = ''; // Limpa o conteúdo
+        const post = postsData.find(p => p.id === postId);
+        const content = postContents[postId];
+
+        if (post && content) {
+            const postHTML = `
+                <div class="max-w-4xl mx-auto">
+                    <a href="/novidades" class="text-sky-600 font-semibold hover:text-sky-800 transition-colors">&larr; Voltar para todas as novidades</a>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 mt-6 mb-4 font-title">${post.title}</h1>
+                    <p class="text-slate-500 mb-8">${post.date} • Por ${post.author}</p>
+                    <img src="${post.imageUrl}" alt="[Imagem do post ${post.title}]" class="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-lg mb-12">
+                    <div class="prose prose-lg max-w-none text-slate-700 post-content">
+                        ${content}
+                    </div>
+                </div>
+            `;
+            mainContent.innerHTML = postHTML;
+            window.scrollTo(0, 0);
+        } else {
+            renderBlogList(); // Se o post não for encontrado, mostra a lista
+        }
+    }
+
+    function handleRouting() {
+        const hash = window.location.hash;
+        if (hash && hash.startsWith('#post-')) {
+            const postId = parseInt(hash.replace('#post-', ''));
+            renderSinglePost(postId);
+        } else {
+            renderBlogList();
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if(mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+        }
+        
+        window.addEventListener('hashchange', handleRouting);
+        handleRouting(); // Renderiza a view correta na carga inicial
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- NOVO: TÍTULO E DESCRIÇÃO OTIMIZADOS -->
+    <title>Simuladores Financeiros para Médicos | DDica</title>
+    <meta name="description" content="Utilize nossas ferramentas interativas para simular sua aposentadoria, projeção de patrimônio, carga tributária e mais. Tenha clareza sobre seu futuro financeiro.">
+    <meta name="keywords" content="simulador financeiro, calculadora aposentadoria, simulador investimentos, planejamento financeiro médico, carga tributária PJ">
+    <meta name="author" content="DDica">
+    
+    <!-- NOVO: FAVICON -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- NOVO: TAGS DE RASTREAMENTO -->
+    <!-- 1. Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WSH1YF9M2Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WSH1YF9M2Y');
+    </script>
+    <!-- 2. Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1151859876815343');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1151859876815343&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- FIM DAS TAGS DE RASTREAMENTO -->
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js para gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Lato', sans-serif; background-color: #f8fafc; color: #334155; }
+        .font-title { font-family: 'Poppins', sans-serif; }
+        .text-balance { text-wrap: balance; }
+        .cta-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+        }
+        .gradient-logo {
+            background: linear-gradient(90deg, #0ea5e9 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .gradient-btn {
+            background: linear-gradient(90deg, #0ea5e9 0%, #10b981 100%);
+        }
+        /* Estilo para sliders */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #0ea5e9;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; opacity: 0; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+    <div class="flex flex-col min-h-screen">
+
+        <!-- Menu Principal -->
+        <nav class="w-full bg-white/90 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-extrabold gradient-logo tracking-tight font-title">Ddica</a>
+                <!-- Menu Desktop -->
+                <ul class="hidden lg:flex gap-6 items-center font-semibold text-slate-600 text-sm">
+                    <li><a href="triagem-financeira.html" class="hover:text-sky-600 transition">Triagem financeira</a></li>
+                    <li><a href="metodo-phd.html" class="hover:text-sky-600 transition">Método PHD</a></li>
+                    <li><a href="sobre-nos.html" class="hover:text-sky-600 transition">Sobre nós</a></li>
+                    <li><a href="simuladores.html" class="text-sky-600 border-b-2 border-sky-600 pb-1 font-bold">Simuladores</a></li>
+                    <li><a href="novidades.html" class="hover:text-sky-600 transition">Novidades</a></li>
+                </ul>
+                <!-- ATUALIZADO: Falar com especialista -> WhatsApp -->
+                <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Ddica%21%20%F0%9F%92%AC" target="_blank" class="contact-trigger hidden lg:inline-block gradient-btn text-white font-bold px-5 py-2.5 rounded-full shadow-lg hover:scale-105 transition-all cta-button text-sm">
+                    Falar com especialista
+                </a>
+                <!-- Menu Mobile (Hamburger) -->
+                <button id="mobile-menu-button" class="lg:hidden focus:outline-none">
+                    <svg class="w-8 h-8 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-8 6h8" /></svg>
+                </button>
+            </div>
+            <!-- Painel do Menu Mobile -->
+            <div id="mobile-menu" class="hidden bg-white shadow-sm lg:hidden">
+                <ul class="px-6 py-4 flex flex-col gap-4">
+                    <li><a href="triagem-financeira.html" class="block hover:text-sky-600 transition">Triagem financeira</a></li>
+                    <li><a href="metodo-phd.html" class="block hover:text-sky-600 transition">Método PHD</a></li>
+                    <li><a href="sobre-nos.html" class="block hover:text-sky-600 transition">Sobre nós</a></li>
+                    <li><a href="simuladores.html" class="block text-sky-600 font-bold">Simuladores</a></li>
+                    <li><a href="novidades.html" class="block hover:text-sky-600 transition">Novidades</a></li>
+                    <li>
+                        <!-- ATUALIZADO: Falar com especialista -> WhatsApp -->
+                        <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Ddica%21%20%F0%9F%92%AC" target="_blank" class="w-full text-center gradient-btn text-white font-bold py-3 rounded-full shadow-lg">Falar com especialista</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="flex-grow">
+            <!-- Seção Hero da Página -->
+            <section class="bg-white">
+                <div class="container mx-auto px-6 py-20 text-center">
+                    <!-- NOVO H1 OTIMIZADO -->
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 leading-tight font-title">Simuladores Financeiros para Médicos: Ferramentas para dar Clareza ao seu Futuro</h1>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-600">Use nossas ferramentas interativas para visualizar o impacto de decisões financeiras, entender seus números e planejar os próximos passos com mais segurança e confiança.</p>
+                </div>
+            </section>
+
+            <!-- Container para os Simuladores -->
+            <div class="container mx-auto px-6 py-12 space-y-16">
+
+                <!-- 1. Simulador de Projeção de Patrimônio -->
+                <section id="sim-patrimonio" class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 text-center font-title">Simulador de Projeção de Patrimônio</h2>
+                    <p class="text-slate-600 text-center mt-2 mb-8 max-w-2xl mx-auto">Veja seu patrimônio crescer de forma exponencial com investimentos consistentes (considerando 8% a.a. de juros real).</p>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-6">
+                            <div>
+                                <label for="patrimonio-inicial-input" class="font-semibold">Patrimônio Inicial (R$)</label>
+                                <input id="patrimonio-inicial-input" type="number" step="10000" value="50000" class="w-full p-2 border border-slate-300 rounded-md mt-1">
+                                <input id="patrimonio-inicial-range" type="range" min="0" max="2000000" step="10000" value="50000" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer mt-2">
+                            </div>
+                            <div>
+                                <label for="aporte-mensal-input" class="font-semibold">Aporte Mensal (R$)</label>
+                                <input id="aporte-mensal-input" type="number" step="500" value="2000" class="w-full p-2 border border-slate-300 rounded-md mt-1">
+                                <input id="aporte-mensal-range" type="range" min="0" max="50000" step="500" value="2000" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer mt-2">
+                            </div>
+                            <div>
+                                <label for="periodo-anos-input" class="font-semibold">Período (Anos)</label>
+                                <input id="periodo-anos-input" type="number" min="1" max="40" step="1" value="20" class="w-full p-2 border border-slate-300 rounded-md mt-1">
+                                <input id="periodo-anos-range" type="range" min="1" max="40" step="1" value="20" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer mt-2">
+                            </div>
+                        </div>
+                        <div>
+                            <canvas id="patrimonio-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <!-- ATUALIZADO: Falar com especialista -> WhatsApp -->
+                        <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20otimizar%20minha%20proje%C3%A7%C3%A3o%20de%20patrim%C3%B4nio%20com%20a%20Ddica%21" target="_blank" class="contact-trigger gradient-btn text-white font-bold py-3 px-8 rounded-full cta-button">Otimizar meus investimentos</a>
+                    </div>
+                </section>
+
+                <!-- 2. Simulador de Carga Tributária -->
+                <section id="sim-impostos" class="bg-slate-100 p-8 rounded-2xl">
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 text-center font-title">Simulador de Carga Tributária para Médicos (PJ vs PF)</h2>
+                    <p class="text-slate-600 text-center mt-2 mb-8 max-w-2xl mx-auto">Entenda a diferença de impostos entre atuar como Pessoa Física e os principais regimes de Pessoa Jurídica.</p>
+                    <div class="max-w-2xl mx-auto space-y-4">
+                        <div>
+                            <label for="faturamento-mensal" class="font-semibold">Faturamento Mensal Bruto: <span class="font-bold text-sky-600" id="faturamento-mensal-valor">R$ 30.000</span></label>
+                            <input id="faturamento-mensal" type="range" min="5000" max="150000" step="1000" value="30000" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-center">
+                            <div><h3 class="font-bold text-lg">Pessoa Física</h3><p class="text-2xl font-extrabold text-red-500 mt-2" id="imposto-pf">R$ 7.250</p><p class="text-sm text-slate-500">Imposto Estimado</p></div>
+                            <div><h3 class="font-bold text-lg">PJ (Simples Nacional)</h3><p class="text-2xl font-extrabold text-yellow-500 mt-2" id="imposto-pj-simples">R$ 1.800</p><p class="text-sm text-slate-500">Imposto Estimado</p></div>
+                            <div><h3 class="font-bold text-lg">PJ (Lucro Presumido)</h3><p class="text-2xl font-extrabold text-green-500 mt-2" id="imposto-pj-presumido">R$ 4.155</p><p class="text-sm text-slate-500">Imposto Estimado</p></div>
+                        </div>
+                        <div class="text-center pt-4">
+                            <h3 class="font-bold text-lg">Sua Economia Anual pode chegar a:</h3>
+                            <p class="text-4xl font-extrabold text-sky-600 mt-2" id="economia-anual">R$ 65.400</p>
+                        </div>
+                        <p class="text-xs text-slate-500 text-center pt-2">* Este é um cálculo simplificado e serve apenas como uma estimativa. A economia real depende de uma análise tributária completa e individualizada.</p>
+                    </div>
+                    <div class="text-center mt-8">
+                        <!-- ATUALIZADO: Falar com especialista -> WhatsApp -->
+                        <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20reduzir%20minha%20carga%20tribut%C3%A1ria%20com%20a%20Ddica%21" target="_blank" class="contact-trigger gradient-btn text-white font-bold py-3 px-8 rounded-full cta-button">Quero reduzir minha carga tributária</a>
+                    </div>
+                </section>
+                
+                <!-- 3. Simulador de Aposentadoria -->
+                <section id="sim-aposentadoria" class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 text-center font-title">Simulador de Aposentadoria e Investimentos para Médicos</h2>
+                    <p class="text-slate-600 text-center mt-2 mb-8 max-w-2xl mx-auto">Descubra quanto você precisa acumular para ter a renda mensal desejada na aposentadoria.</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div><label for="idade-atual" class="font-semibold">Idade Atual</label><input type="number" id="idade-atual" value="35" class="w-full p-2 border border-slate-300 rounded-md mt-1"></div>
+                            <div><label for="idade-aposentadoria" class="font-semibold">Idade para se Aposentar</label><input type="number" id="idade-aposentadoria" value="65" class="w-full p-2 border border-slate-300 rounded-md mt-1"></div>
+                            <div><label for="renda-desejada" class="font-semibold">Renda Mensal Desejada na Aposentadoria</label><input type="number" id="renda-desejada" value="15000" step="1000" class="w-full p-2 border border-slate-300 rounded-md mt-1"></div>
+                            <div><label for="aporte-aposentadoria" class="font-semibold">Quanto você pode investir por mês?</label><input type="number" id="aporte-aposentadoria" value="2000" step="500" class="w-full p-2 border border-slate-300 rounded-md mt-1"></div>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg text-center flex flex-col justify-center">
+                            <h3 class="font-bold text-lg">Você precisará de um patrimônio de:</h3><p class="text-4xl font-extrabold text-sky-600 my-4" id="patrimonio-necessario">R$ 4.500.000</p>
+                            <h3 class="font-bold text-lg">Com seus aportes, você atingirá:</h3><p class="text-3xl font-extrabold text-slate-800 my-4" id="patrimonio-atingido">R$ 2.855.765</p>
+                            <p class="font-semibold text-red-500" id="deficit-aposentadoria">Será preciso ajustar o plano!</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <!-- ATUALIZADO: Falar com especialista -> WhatsApp -->
+                        <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20planejar%20minha%20aposentadoria%20com%20a%20Ddica%21" target="_blank" class="contact-trigger gradient-btn text-white font-bold py-3 px-8 rounded-full cta-button">Quero planejar minha aposentadoria</a>
+                    </div>
+                </section>
+
+                <!-- 4. Simulador de Independência Financeira -->
+                <section id="sim-independencia" class="bg-slate-100 p-8 rounded-2xl">
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 text-center font-title">Simulador de Independência Financeira</h2>
+                    <p class="text-slate-600 text-center mt-2 mb-8 max-w-2xl mx-auto">Calcule o "número mágico" que você precisa ter investido para que seus rendimentos paguem seu custo de vida.</p>
+                    <div class="max-w-xl mx-auto space-y-4">
+                        <div><label for="custo-mensal" class="font-semibold text-lg">Qual seu custo de vida mensal?</label><input type="number" id="custo-mensal" value="12000" step="500" class="w-full p-3 border border-slate-300 rounded-md mt-2 text-2xl text-center"></div>
+                        <div class="text-center pt-4">
+                            <h3 class="font-semibold text-lg">Seu número para a Independência Financeira é:</h3><p class="text-5xl font-extrabold text-sky-600 my-4" id="numero-if">R$ 3.600.000</p>
+                            <p class="text-sm text-slate-500">* Baseado na "Regra dos 4%", um princípio que sugere que você pode retirar 4% do seu patrimônio investido anualmente com baixo risco de esgotá-lo.</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <!-- ATUALIZADO: Falar com especialista -> WhatsApp -->
+                        <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20ajuda%20para%20atingir%20minha%20independ%C3%AAncia%20financeira%20com%20a%20Ddica%21" target="_blank" class="contact-trigger gradient-btn text-white font-bold py-3 px-8 rounded-full cta-button">Quero ajuda para atingir minha independência financeira</a>
+                    </div>
+                </section>
+
+                <!-- 5. Calculadora de Reserva de Emergência -->
+                <section id="sim-emergencia" class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 text-center font-title">Calculadora de Reserva de Emergência</h2>
+                    <p class="text-slate-600 text-center mt-2 mb-8 max-w-2xl mx-auto">Defina o colchão de segurança ideal para cobrir seus custos essenciais em caso de imprevistos.</p>
+                    <div class="max-w-xl mx-auto space-y-4">
+                        <div><label for="gastos-essenciais" class="font-semibold text-lg">Seus gastos mensais essenciais (R$)</label><input type="number" id="gastos-essenciais" value="8000" step="500" class="w-full p-3 border border-slate-300 rounded-md mt-2 text-2xl text-center"></div>
+                        <div><label for="meses-cobertura" class="font-semibold">Meses de cobertura: <span class="font-bold text-sky-600" id="meses-cobertura-valor">6 meses</span></label><input id="meses-cobertura" type="range" min="3" max="12" step="1" value="6" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"></div>
+                        <div class="text-center pt-4">
+                            <h3 class="font-semibold text-lg">Sua reserva de emergência ideal é:</h3><p class="text-5xl font-extrabold text-sky-600 my-4" id="reserva-ideal">R$ 48.000</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <!-- ATUALIZADO: Falar com especialista -> WhatsApp -->
+                        <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20estrat%C3%A9gias%20para%20atingir%20minha%20reserva%20de%20emerg%C3%AAncia%20com%20a%20Ddica%21" target="_blank" class="contact-trigger gradient-btn text-white font-bold py-3 px-8 rounded-full cta-button">Quero estratégias para atingir minha reserva de emergência</a>
+                    </div>
+                </section>
+
+                <!-- 6. Calculadora de Quitação de Dívidas -->
+                <section id="sim-dividas" class="bg-slate-100 p-8 rounded-2xl">
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 text-center font-title">Calculadora de Quitação de Dívidas</h2>
+                    <p class="text-slate-600 text-center mt-2 mb-8 max-w-2xl mx-auto">Veja quanto tempo levará para quitar um financiamento (FIES, imóvel, carro) e o custo total dos juros.</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div><label for="divida-total" class="font-semibold">Valor Total da Dívida (R$)</label><input type="number" id="divida-total" value="150000" class="w-full p-2 border border-slate-300 rounded-md mt-1"></div>
+                            <div><label for="juros-divida" class="font-semibold">Taxa de Juros Anual (%)</label><input type="number" id="juros-divida" value="9" class="w-full p-2 border border-slate-300 rounded-md mt-1"></div>
+                            <div><label for="pagamento-mensal-divida" class="font-semibold">Pagamento Mensal (R$)</label><input type="number" id="pagamento-mensal-divida" value="2000" class="w-full p-2 border border-slate-300 rounded-md mt-1"></div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg text-center flex flex-col justify-center">
+                            <h3 class="font-bold text-lg">Tempo para quitar a dívida:</h3><p class="text-4xl font-extrabold text-sky-600 my-4" id="tempo-quitacao">8 anos e 10 meses</p>
+                            <h3 class="font-bold text-lg">Total pago em juros:</h3><p class="text-3xl font-extrabold text-slate-800 my-4" id="total-juros-pago">R$ 61.850</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <!-- ATUALIZADO: Falar com especialista -> WhatsApp -->
+                        <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20um%20plano%20para%20quitar%20d%C3%ADvidas%20com%20a%20Ddica%21" target="_blank" class="contact-trigger gradient-btn text-white font-bold py-3 px-8 rounded-full cta-button">Criar um plano para quitar dívidas</a>
+                    </div>
+                </section>
+
+                <!-- 7. Calculadora de Impacto das Taxas -->
+                <section id="sim-taxas" class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 text-center font-title">Calculadora de Impacto das Taxas de Investimento</h2>
+                    <p class="text-slate-600 text-center mt-2 mb-8 max-w-2xl mx-auto">Veja o quanto taxas de administração e performance podem "comer" do seu patrimônio no longo prazo.</p>
+                    <div class="grid md:grid-cols-2 gap-8 items-center max-w-3xl mx-auto">
+                        <div class="space-y-4">
+                            <div><label for="investimento-taxas" class="font-semibold">Investimento Total (em 10 anos)</label><input type="number" id="investimento-taxas" value="500000" step="50000" class="w-full p-2 border border-slate-300 rounded-md mt-1"></div>
+                            <div><label for="taxa-maior" class="font-semibold">Taxa Maior (Ex: Banco) (% a.a.)</label><input type="number" id="taxa-maior" value="2.0" step="0.1" class="w-full p-2 border border-slate-300 rounded-md mt-1"></div>
+                            <div><label for="taxa-menor" class="font-semibold">Taxa Menor (Ex: Assessoria) (% a.a.)</label><input type="number" id="taxa-menor" value="0.5" step="0.1" class="w-full p-2 border border-slate-300 rounded-md mt-1"></div>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg text-center">
+                            <h3 class="font-bold text-lg">Dinheiro "deixado na mesa":</h3>
+                            <p class="text-5xl font-extrabold text-red-500 my-4" id="diferenca-taxas">R$ 75.000</p>
+                            <p class="text-sm text-slate-500">Valor perdido para taxas mais altas</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <!-- ATUALIZADO: Falar com especialista -> WhatsApp -->
+                        <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20buscar%20investimentos%20mais%20eficientes%20com%20a%20Ddica%21" target="_blank" class="contact-trigger gradient-btn text-white font-bold py-3 px-8 rounded-full cta-button">Buscar investimentos mais eficientes</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <!-- Rodapé -->
+        <footer class="bg-slate-900 text-white">
+            <div class="container mx-auto px-6 py-12">
+                <div class="grid grid-cols-1 lg:grid-cols-10 gap-10">
+                    <div class="lg:col-span-4 text-center lg:text-left"><h3 class="text-3xl font-extrabold tracking-tight gradient-logo inline-block font-title">Ddica</h3><p class="mt-4 text-slate-400 max-w-md mx-auto lg:mx-0">Cuidamos do seu futuro para que você possa focar no que faz de melhor.</p></div>
+                    <div class="lg:col-span-2 text-center lg:text-left"><h4 class="font-bold text-lg text-white tracking-wider font-title">Navegação</h4><ul class="mt-4 space-y-2"><li><a href="triagem-financeira.html" class="text-slate-400 hover:text-sky-400 transition">Triagem financeira</a></li><li><a href="metodo-phd.html" class="text-slate-400 hover:text-sky-400 transition">Método PHD</a></li><li><a href="sobre-nos.html" class="text-slate-400 hover:text-sky-400 transition">Sobre nós</a></li><li><a href="simuladores.html" class="text-slate-400 hover:text-sky-400 transition">Simuladores</a></li><li><a href="novidades.html" class="text-slate-400 hover:text-sky-400 transition">Novidades</a></li></ul></div>
+                    <div class="lg:col-span-2 text-center lg:text-left"><h4 class="font-bold text-lg text-white tracking-wider font-title">Institucional</h4><ul class="mt-4 space-y-2"><li><a href="politica-de-privacidade.html" class="text-slate-400 hover:text-sky-400 transition">Política de privacidade</a></li><li><a href="termos-de-uso.html" class="text-slate-400 hover:text-sky-400 transition">Termos de uso</a></li><li><a href="cookies.html" class="text-slate-400 hover:text-sky-400 transition">Cookies</a></li></ul></div>
+                    <div class="lg:col-span-2 text-center lg:text-left"><h4 class="font-bold text-lg text-white tracking-wider font-title">Contato</h4><ul class="mt-4 space-y-3 text-slate-400"><li class="flex items-center gap-2 justify-center lg:justify-start"><i class="fa-solid fa-envelope fa-fw"></i><span>contato@ddica.com.br</span></li><li class="flex items-center gap-2 justify-center lg:justify-start"><i class="fa-brands fa-whatsapp fa-fw"></i><span>(11) 96647-9058</span></li></ul><div class="mt-4 flex gap-4 justify-center lg:justify-start"><a href="https://www.linkedin.com/company/ddica" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-slate-400 hover:text-sky-400 transition text-2xl"><i class="fa-brands fa-linkedin"></i></a><a href="https://www.instagram.com/ddicasaudefinanceira/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-slate-400 hover:text-sky-400 transition text-2xl"><i class="fa-brands fa-instagram"></i></a></div></div>
+                </div>
+                <div class="mt-12 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm"><p>&copy; 2025 Ddica. Todos os direitos reservados. Uma consultoria de vida e finanças para médicos.</p></div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- NOVO: BANNER DE COOKIES -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-slate-800 text-white p-4 z-50 transition-transform duration-500 transform translate-y-full">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
+            <p class="mb-3 md:mb-0 mr-4 text-slate-300">
+                Usamos cookies para melhorar sua experiência no site e analisar o tráfego. Ao clicar em "Aceitar", você concorda com o uso de cookies.
+                <a href="politica-de-privacidade.html" class="text-sky-400 hover:text-sky-300 underline ml-1">Política de Privacidade</a>.
+            </p>
+            <button id="accept-cookies" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex-shrink-0">
+                Aceitar e Continuar
+            </button>
+        </div>
+    </div>
+
+    <!-- Ícone Flutuante do WhatsApp -->
+    <!-- ATUALIZADO: Link Direto para WhatsApp -->
+    <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Ddica%21%20%F0%9F%92%AC" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-40 hover:scale-110 transition-transform">
+        <i class="fa-brands fa-whatsapp text-4xl"></i>
+    </a>
+    
+    <!-- Modal de Contato (Com JS simplificado para WhatsApp) -->
+    <div id="contact-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md relative animate-fade-in">
+             <div class="p-6 text-center bg-slate-100 rounded-t-2xl border-b"><h3 class="text-2xl font-bold text-slate-800 font-title">Fale com um Especialista</h3></div>
+             <div class="p-8">
+                <p class="text-slate-600 mb-6 text-center">Preencha seus dados para nossa equipe ajudar a dar os próximos passos.</p>
+                <form id="contact-form" class="space-y-4">
+                    <div><label for="name" class="block text-sm font-semibold text-gray-700 mb-1">Nome</label><input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-sky-500 focus:border-sky-500" required></div>
+                    <div><label for="email" class="block text-sm font-semibold text-gray-700 mb-1">Email</label><input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-sky-500 focus:border-sky-500" required></div>
+                    <div><label for="phone" class="block text-sm font-semibold text-gray-700 mb-1">Whatsapp</label><input type="tel" id="phone" name="phone" placeholder="(XX) XXXXX-XXXX" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-sky-500 focus:border-sky-500" required></div>
+                    <button type="submit" class="w-full gradient-btn text-white p-3 rounded-lg font-bold text-lg cta-button mt-2">Falar com a Ddica</button>
+                </form>
+                <div id="form-feedback" class="hidden mt-4 text-center p-3 rounded-md"></div>
+             </div>
+             <button id="close-contact-modal-btn" class="absolute top-3 right-3 text-gray-400 hover:text-gray-800 transition-colors"><i class="fa-solid fa-xmark fa-lg"></i></button>
+        </div>
+    </div>
+    
+<script>
+    // URLs e Webhook (mantidos para o modal de contato)
+    const WHATSAPP_URL = 'https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Ddica%21%20%F0%9F%92%AC';
+    const MAKE_WEBHOOK_URL = 'https://hook.us2.make.com/juj6aled15u2yci7ixygv3cixnqhveuc';
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if(mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+        }
+
+        const formatCurrency = (value) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+
+        // --- LÓGICA DO MODAL DE CONTATO E WHATSAPP ---
+        const contactModal = document.getElementById('contact-modal');
+        const contactTriggers = document.querySelectorAll('.contact-trigger');
+        const closeContactModalBtn = document.getElementById('close-contact-modal-btn');
+        const contactForm = document.getElementById('contact-form');
+        const feedbackDiv = document.getElementById('form-feedback');
+        const phoneInput = document.getElementById('phone');
+
+        // Abre o modal apenas quando o trigger é um botão
+        if (contactModal && contactTriggers.length > 0 && closeContactModalBtn && contactForm) {
+            contactTriggers.forEach(trigger => {
+                 if (trigger.tagName === 'BUTTON') { // Só abre o modal se for um botão
+                    trigger.addEventListener('click', () => contactModal.classList.remove('hidden'));
+                 }
+            });
+            closeContactModalBtn.addEventListener('click', () => contactModal.classList.add('hidden'));
+            contactModal.addEventListener('click', (e) => { if (e.target === contactModal) contactModal.classList.add('hidden'); });
+            
+            if(phoneInput) {
+                phoneInput.addEventListener('input', e => {
+                    let value = e.target.value.replace(/\D/g, '');
+                    value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                    value = value.replace(/(\d{5})(\d)/, '$1-$2');
+                    e.target.value = value.slice(0, 15);
+                });
+            }
+
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Enviando...';
+
+                const leadData = { 
+                    nome: contactForm.name.value, 
+                    email: contactForm.email.value, 
+                    telefone: contactForm.phone.value, 
+                    origem: 'Popup de Contato (Simuladores)'
+                };
+                                
+                try {
+                    const response = await fetch(MAKE_WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify(leadData),
+                    });
+
+                    if (!response.ok) { throw new Error('Falha no envio dos dados.'); }
+                    
+                    feedbackDiv.textContent = 'Obrigado! Redirecionando para o WhatsApp...';
+                    feedbackDiv.className = 'mt-4 text-center p-3 rounded-md bg-green-100 text-green-800';
+                    feedbackDiv.classList.remove('hidden');
+                    contactForm.classList.add('hidden');
+                    
+                    setTimeout(() => {
+                        window.open(WHATSAPP_URL, '_blank');
+                        contactModal.classList.add('hidden');
+                        setTimeout(() => {
+                            contactForm.reset();
+                            contactForm.classList.remove('hidden');
+                            feedbackDiv.classList.add('hidden');
+                            submitButton.disabled = false;
+                            submitButton.textContent = 'Falar com a Ddica';
+                        }, 500);
+                    }, 2000);
+                } catch (error) {
+                    console.error("Erro ao enviar para o webhook: ", error);
+                    feedbackDiv.textContent = 'Ocorreu um erro. Por favor, tente novamente.';
+                    feedbackDiv.className = 'mt-4 text-center p-3 rounded-md bg-red-100 text-red-800';
+                    feedbackDiv.classList.remove('hidden');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Falar com a Ddica';
+                }
+            });
+        }
+        
+        // --- LÓGICA DO BANNER DE COOKIES (LGPD) ---
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptCookiesBtn = document.getElementById('accept-cookies');
+        const isAccepted = localStorage.getItem('cookies_accepted_ddica');
+
+        if (!isAccepted) {
+            setTimeout(() => {
+                cookieBanner.classList.remove('translate-y-full');
+            }, 500);
+        }
+
+        if(acceptCookiesBtn) {
+            acceptCookiesBtn.addEventListener('click', () => {
+                localStorage.setItem('cookies_accepted_ddica', 'true');
+                cookieBanner.classList.add('translate-y-full'); 
+            });
+        }
+
+        // --- LÓGICA DOS SIMULADORES (MANTIDA) ---
+        // 1. Simulador de Patrimônio
+        const patrimonioInicialInput = document.getElementById('patrimonio-inicial-input');
+        const patrimonioInicialRange = document.getElementById('patrimonio-inicial-range');
+        const aporteMensalInput = document.getElementById('aporte-mensal-input');
+        const aporteMensalRange = document.getElementById('aporte-mensal-range');
+        const periodoAnosInput = document.getElementById('periodo-anos-input');
+        const periodoAnosRange = document.getElementById('periodo-anos-range');
+        let patrimonioChartInstance = null;
+
+        function syncInputs(numberInput, rangeInput) {
+            numberInput.addEventListener('input', () => {
+                const value = parseFloat(numberInput.value) || 0;
+                if (value >= parseFloat(rangeInput.min) && value <= parseFloat(rangeInput.max)) {
+                    rangeInput.value = value;
+                }
+                calculateAndDrawPatrimonio();
+            });
+            rangeInput.addEventListener('input', () => {
+                numberInput.value = rangeInput.value;
+                calculateAndDrawPatrimonio();
+            });
+        }
+
+        function calculateAndDrawPatrimonio() {
+            const P = parseFloat(patrimonioInicialInput.value) || 0;
+            const A = parseFloat(aporteMensalInput.value) || 0;
+            const fixedAnnualRate = 0.08;
+            const r = fixedAnnualRate / 12;
+            const t = (parseInt(periodoAnosInput.value) || 0) * 12;
+            const labels = [];
+            const dataComJuros = [];
+            const dataSemJuros = [];
+            
+            for (let i = 0; i <= t; i++) {
+                if (i % 12 === 0 || i === t) {
+                    labels.push(`Ano ${Math.floor(i/12)}`);
+                    const totalInvestido = P + (A * i);
+                    const montante = P * Math.pow(1 + r, i) + A * ((Math.pow(1 + r, i) - 1) / r);
+                    dataSemJuros.push(totalInvestido);
+                    dataComJuros.push(montante);
+                }
+            }
+
+            const ctx = document.getElementById('patrimonio-chart')?.getContext('2d');
+            if (!ctx) return;
+            if (patrimonioChartInstance) patrimonioChartInstance.destroy();
+            patrimonioChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Total Acumulado',
+                        data: dataComJuros,
+                        borderColor: '#0ea5e9',
+                        backgroundColor: 'rgba(14, 165, 233, 0.2)',
+                        fill: true,
+                        tension: 0.1
+                    }, {
+                        label: 'Total Investido (sem juros)',
+                        data: dataSemJuros,
+                        borderColor: '#64748b',
+                        borderDash: [5, 5],
+                        fill: false,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { tooltip: { callbacks: { label: (context) => formatCurrency(context.raw) } } },
+                    scales: { y: { ticks: { callback: (value) => formatCurrency(value) } } }
+                }
+            });
+        }
+        
+        if (patrimonioInicialInput) {
+            syncInputs(patrimonioInicialInput, patrimonioInicialRange);
+            syncInputs(aporteMensalInput, aporteMensalRange);
+            syncInputs(periodoAnosInput, periodoAnosRange);
+            calculateAndDrawPatrimonio();
+        }
+
+        // 2. Simulador de Impostos
+        const faturamentoMensal = document.getElementById('faturamento-mensal');
+        
+        function updateImpostosDisplay() {
+            const faturamento = parseFloat(faturamentoMensal.value);
+            document.getElementById('faturamento-mensal-valor').textContent = formatCurrency(faturamento);
+            
+            const teto_inss = 7786.02;
+            const inss_pf = Math.min(faturamento * 0.2, teto_inss * 0.2);
+            const base_calculo_pf = faturamento - inss_pf;
+            let irpf = 0;
+            if (base_calculo_pf > 4664.68) irpf = (base_calculo_pf * 0.275) - 884.96;
+            else if (base_calculo_pf > 3751.06) irpf = (base_calculo_pf * 0.225) - 651.73;
+            else if (base_calculo_pf > 2826.66) irpf = (base_calculo_pf * 0.15) - 370.40;
+            else if (base_calculo_pf > 2112.01) irpf = (base_calculo_pf * 0.075) - 158.40;
+            const total_pf = irpf + inss_pf;
+
+            const faturamento_anual = faturamento * 12;
+            let aliquota_simples = 0.06;
+            if (faturamento_anual > 180000) aliquota_simples = 0.112;
+            if (faturamento_anual > 360000) aliquota_simples = 0.135;
+            const total_pj_simples = faturamento * aliquota_simples;
+
+            const presuncao = 0.32;
+            const irpj = faturamento * presuncao * 0.15;
+            const csll = faturamento * presuncao * 0.09;
+            const pis = faturamento * 0.0065;
+            const cofins = faturamento * 0.03;
+            const iss = faturamento * 0.03; 
+            const total_pj_presumido = irpj + csll + pis + cofins + iss;
+            
+            const melhor_pj = Math.min(total_pj_simples, total_pj_presumido);
+            const economia = (total_pf - melhor_pj) * 12;
+
+            document.getElementById('imposto-pf').textContent = formatCurrency(total_pf);
+            document.getElementById('imposto-pj-simples').textContent = formatCurrency(total_pj_simples);
+            document.getElementById('imposto-pj-presumido').textContent = formatCurrency(total_pj_presumido);
+            document.getElementById('economia-anual').textContent = formatCurrency(economia > 0 ? economia : 0);
+        }
+
+        faturamentoMensal?.addEventListener('input', updateImpostosDisplay);
+        if(faturamentoMensal) updateImpostosDisplay();
+
+        // 3. Simulador de Aposentadoria
+        const idadeAtual = document.getElementById('idade-atual');
+        const idadeAposentadoria = document.getElementById('idade-aposentadoria');
+        const rendaDesejada = document.getElementById('renda-desejada');
+        const aporteAposentadoria = document.getElementById('aporte-aposentadoria');
+
+        function updateAposentadoriaDisplay() {
+            const renda = parseFloat(rendaDesejada.value) || 0;
+            const patrimonioNecessario = renda * 12 / 0.04;
+            const anosContribuicao = (parseInt(idadeAposentadoria.value) || 0) - (parseInt(idadeAtual.value) || 0);
+            const mesesContribuicao = anosContribuicao * 12;
+            const aporte = parseFloat(aporteAposentadoria.value) || 0;
+            const taxaMensal = Math.pow(1.08, 1/12) - 1;
+            const patrimonioAtingido = aporte * ((Math.pow(1 + taxaMensal, mesesContribuicao) - 1) / taxaMensal);
+            const deficit = patrimonioNecessario - patrimonioAtingido;
+            const deficitEl = document.getElementById('deficit-aposentadoria');
+
+            if (deficit <= 0) {
+                deficitEl.textContent = "Parabéns, você está no caminho certo!";
+                deficitEl.className = "font-semibold text-green-500";
+            } else {
+                deficitEl.textContent = `Faltarão ${formatCurrency(deficit)}. É preciso ajustar o plano!`;
+                deficitEl.className = "font-semibold text-red-500";
+            }
+
+            document.getElementById('patrimonio-necessario').textContent = formatCurrency(patrimonioNecessario);
+            document.getElementById('patrimonio-atingido').textContent = formatCurrency(patrimonioAtingido);
+        }
+
+        [idadeAtual, idadeAposentadoria, rendaDesejada, aporteAposentadoria].forEach(el => el?.addEventListener('input', updateAposentadoriaDisplay));
+        if(idadeAtual) updateAposentadoriaDisplay();
+
+        // 4. Simulador de Independência Financeira
+        const custoMensal = document.getElementById('custo-mensal');
+        function updateIFDisplay() {
+            const custo = parseFloat(custoMensal.value) || 0;
+            const numeroIF = custo * 12 * 25;
+            document.getElementById('numero-if').textContent = formatCurrency(numeroIF);
+        }
+        custoMensal?.addEventListener('input', updateIFDisplay);
+        if(custoMensal) updateIFDisplay();
+
+        // 5. Calculadora de Reserva de Emergência
+        const gastosEssenciais = document.getElementById('gastos-essenciais');
+        const mesesCobertura = document.getElementById('meses-cobertura');
+        function updateReservaDisplay() {
+            const gastos = parseFloat(gastosEssenciais.value) || 0;
+            const meses = parseInt(mesesCobertura.value) || 0;
+            document.getElementById('meses-cobertura-valor').textContent = `${meses} meses`;
+            document.getElementById('reserva-ideal').textContent = formatCurrency(gastos * meses);
+        }
+        [gastosEssenciais, mesesCobertura].forEach(el => el?.addEventListener('input', updateReservaDisplay));
+        if (gastosEssenciais) updateReservaDisplay();
+
+        // 6. Calculadora de Quitação de Dívidas
+        const dividaTotal = document.getElementById('divida-total');
+        const jurosDivida = document.getElementById('juros-divida');
+        const pagamentoMensalDivida = document.getElementById('pagamento-mensal-divida');
+
+        function updateDividaDisplay() {
+            const P = parseFloat(dividaTotal.value) || 0;
+            const i = (parseFloat(jurosDivida.value) || 0) / 100 / 12;
+            const A = parseFloat(pagamentoMensalDivida.value) || 0;
+            
+            if (P <= 0 || i <= 0 || A <= (P * i)) {
+                document.getElementById('tempo-quitacao').textContent = "---";
+                document.getElementById('total-juros-pago').textContent = "---";
+                return;
+            }
+
+            const n = -Math.log(1 - (P * i) / A) / Math.log(1 + i);
+            const totalPago = n * A;
+            const totalJuros = totalPago - P;
+            const anos = Math.floor(n / 12);
+            const meses = Math.ceil(n % 12);
+
+            document.getElementById('tempo-quitacao').textContent = `${anos} anos e ${meses} meses`;
+            document.getElementById('total-juros-pago').textContent = formatCurrency(totalJuros);
+        }
+        [dividaTotal, jurosDivida, pagamentoMensalDivida].forEach(el => el?.addEventListener('input', updateDividaDisplay));
+        if(dividaTotal) updateDividaDisplay();
+        
+        // 7. Calculadora de Impacto das Taxas
+        const investimentoTaxas = document.getElementById('investimento-taxas');
+        const taxaMaior = document.getElementById('taxa-maior');
+        const taxaMenor = document.getElementById('taxa-menor');
+
+        function updateTaxasDisplay() {
+            const P = parseFloat(investimentoTaxas.value) || 0;
+            const taxa1 = parseFloat(taxaMaior.value) / 100;
+            const taxa2 = parseFloat(taxaMenor.value) / 100;
+            const diferenca = P * (taxa1 - taxa2);
+            document.getElementById('diferenca-taxas').textContent = formatCurrency(diferenca > 0 ? diferenca : 0);
+        }
+        [investimentoTaxas, taxaMaior, taxaMenor].forEach(el => el?.addEventListener('input', updateTaxasDisplay));
+        if (investimentoTaxas) updateTaxasDisplay();
+    });
+</script>
+</body>
+</html>

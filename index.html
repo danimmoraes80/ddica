@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria Financeira Personalizada para Médicos | DDica</title>
+    <meta name="description" content="Você cuida de vidas, nós cuidamos do seu futuro. Receba um diagnóstico inicial de sua vida financeira. Soluções em Planejamento, Investimentos e Otimização Tributária para Médicos.">
+    <meta name="keywords" content="consultoria financeira para médicos, planejamento financeiro personalizado, investimentos para médicos, gestão de patrimônio para médicos, otimização tributária médico">
+    <meta name="author" content="DDica">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WSH1YF9M2Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WSH1YF9M2Y');
+    </script>
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1151859876815343');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1151859876815343&ev=PageView&noscript=1"
+    /></noscript>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Lato', sans-serif; background-color: #FFFFFF; color: #334155; }
+        .font-title { font-family: 'Poppins', sans-serif; }
+        .text-balance { text-wrap: balance; }
+        .cta-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+        }
+        .section-title::after {
+            content: ''; position: absolute; bottom: -8px; left: 50%;
+            transform: translateX(-50%); width: 80px; height: 4px;
+            background: linear-gradient(90deg, #0ea5e9, #10b981);
+            border-radius: 2px;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; opacity: 0; }
+        .icon-box {
+            background-color: #e0f2fe; /* sky-100 */
+            color: #0369a1; /* sky-700 */
+            width: 64px;
+            height: 64px;
+        }
+        .testimonial-card {
+            background-color: #1e293b; /* slate-800 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .gradient-logo {
+            background: linear-gradient(90deg, #0ea5e9 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .gradient-btn {
+            background: linear-gradient(90deg, #0ea5e9 0%, #10b981 100%);
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <div class="flex flex-col min-h-screen">
+
+        <nav class="w-full bg-white/90 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-extrabold gradient-logo tracking-tight font-title">Ddica</a>
+                <ul class="hidden lg:flex gap-6 items-center font-semibold text-slate-600 text-sm">
+                    <li><a href="triagem-financeira.html" class="hover:text-sky-600 transition">Triagem financeira</a></li>
+                    <li><a href="metodo-phd.html" class="hover:text-sky-600 transition">Método PHD</a></li>
+                    <li><a href="sobre-nos.html" class="hover:text-sky-600 transition">Sobre nós</a></li>
+                    <li><a href="simuladores.html" class="hover:text-sky-600 transition">Simuladores</a></li>
+                    <li><a href="novidades.html" class="hover:text-sky-600 transition">Novidades</a></li>
+                </ul>
+                <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Ddica%21%20%F0%9F%92%AC" target="_blank" class="hidden lg:inline-block gradient-btn text-white font-bold px-5 py-2.5 rounded-full shadow-lg hover:scale-105 transition-all cta-button text-sm" data-origin="Menu Principal (Home)">
+                    Falar com especialista
+                </a>
+                <button id="mobile-menu-button" class="lg:hidden focus:outline-none">
+                    <svg class="w-8 h-8 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-8 6h8" /></svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden bg-white shadow-sm lg:hidden">
+                <ul class="px-6 py-4 flex flex-col gap-4">
+                    <li><a href="triagem-financeira.html" class="block hover:text-sky-600 transition">Triagem financeira</a></li>
+                    <li><a href="metodo-phd.html" class="block hover:text-sky-600 transition">Método PHD</a></li>
+                    <li><a href="sobre-nos.html" class="block hover:text-sky-600 transition">Sobre nós</a></li>
+                    <li><a href="simuladores.html" class="block hover:text-sky-600 transition">Simuladores</a></li>
+                    <li><a href="novidades.html" class="block hover:text-sky-600 transition">Novidades</a></li>
+                    <li>
+                        <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Ddica%21%20%F0%9F%92%AC" target="_blank" class="w-full text-center gradient-btn text-white font-bold py-3 rounded-full shadow-lg" data-origin="Menu Principal Mobile (Home)">Falar com especialista</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="flex-grow">
+            <section class="relative text-white py-20 md:py-28 parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1579684385127-6abf9df8ca80?q=80&w=2670&auto=format&fit=crop');">
+                <div class="absolute inset-0 bg-slate-900 opacity-80"></div>
+                <div class="container mx-auto px-6 text-center relative z-10">
+                    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 text-balance animate-fade-in font-title">Consultoria Financeira Personalizada para Médicos. Você cuida de vidas. Nós cuidamos do seu futuro.</h1>
+                    <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8 text-balance animate-fade-in" style="--delay: 0.2s;">Sua vida financeira apresenta sintomas que você não pode mais ignorar. Faça uma triagem em 2 minutos e receba um diagnóstico inicial sem custo.</p>
+                    <a href="triagem-financeira.html" class="bg-gradient-to-r from-sky-500 to-green-500 text-white font-bold py-4 px-10 rounded-full text-lg cta-button inline-block shadow-lg animate-fade-in" style="--delay: 0.4s;">
+                        Fazer AGORA minha triagem
+                    </a>
+                    <div class="mt-8 flex flex-wrap justify-center items-center gap-x-6 gap-y-3 md:gap-x-10 text-slate-300 animate-fade-in" style="--delay: 0.6s;">
+                        <div class="flex items-center space-x-2"><i class="fa-solid fa-stethoscope text-sky-400"></i><span class="text-sm font-medium">Ferramenta gratuita</span></div>
+                        <div class="flex items-center space-x-2"><i class="fa-solid fa-lock text-sky-400"></i><span class="text-sm font-medium">100% confidencial</span></div>
+                        <div class="flex items-center space-x-2"><i class="fa-solid fa-award text-sky-400"></i><span class="text-sm font-medium">Metodologia validada</span></div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="py-16 bg-white">
+                 <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 font-title">O diagnóstico é claro: planejar é preciso. E você não está sozinho.</h2>
+                    <div class="mt-12 grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        <div class="text-center"><p class="text-5xl font-extrabold text-sky-600 font-title">72%</p><p class="mt-2 text-slate-600">da renda do médico já está comprometida com despesas fixas.</p></div>
+                        <div class="text-center"><p class="text-5xl font-extrabold text-sky-600 font-title">62%</p><p class="mt-2 text-slate-600">dos médicos sofrem de burnout, onde a pressão financeira é um fator chave.</p></div>
+                        <div class="text-center"><p class="text-5xl font-extrabold text-sky-600 font-title">29%</p><p class="mt-2 text-slate-600">é a percentagem de médicos que se sentem aptos a gerir o próprio dinheiro.</p></div>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-8">Fonte: Pesquisa Nacional Afya (2024)</p>
+                    <div class="mt-12">
+                        <a href="triagem-financeira.html" class="gradient-btn text-white font-bold py-4 px-10 rounded-full text-lg cta-button inline-block">
+                            Quero sair da estatística
+                        </a>
+                    </div>
+                 </div>
+            </section>
+
+            <section id="desafios" class="py-16" style="background-color: #111827;">
+                <div class="container mx-auto px-6 text-white">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold relative section-title pb-4 font-title">Principais desafios financeiros enfrentados por médicos</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                        <div class="p-6 text-center"><div class="icon-box rounded-full flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-file-invoice-dollar text-2xl"></i></div><h3 class="font-bold text-lg mb-2 font-title">Pressão tributária</h3><p class="text-sm text-slate-300">Sente que seus ganhos são consumidos por impostos e não sabe como otimizar sua estrutura PJ/PF.</p></div>
+                        <div class="p-6 text-center"><div class="icon-box rounded-full flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-shield-heart text-2xl"></i></div><h3 class="font-bold text-lg mb-2 font-title">Incerteza de futuro</h3><p class="text-sm text-slate-300">Preocupa-se em como manter seu padrão de vida na aposentadoria e proteger sua família.</p></div>
+                        <div class="p-6 text-center"><div class="icon-box rounded-full flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-clock text-2xl"></i></div><h3 class="font-bold text-lg mb-2 font-title">Falta crônica de tempo</h3><p class="text-sm text-slate-300">A rotina exaustiva não deixa tempo ou energia para se dedicar às finanças com a atenção que elas merecem.</p></div>
+                        <div class="p-6 text-center"><div class="icon-box rounded-full flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-arrow-trend-down text-2xl"></i></div><h3 class="font-bold text-lg mb-2 font-title">Patrimônio estagnado</h3><p class="text-sm text-slate-300">Você trabalha cada vez mais, mas não vê suas reservas crescerem na mesma proporção que seu esforço.</p></div>
+                    </div>
+                    <div class="text-center mt-12">
+                        <a href="triagem-financeira.html" class="gradient-btn text-white font-bold py-4 px-10 rounded-full text-lg cta-button inline-block">
+                            Quero iniciar meu tratamento
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="casos" class="py-16 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 relative section-title pb-4 font-title">Depoimentos de médicos que transformaram suas finanças com a DDica</h2>
+                        <p class="text-slate-600 mt-8 max-w-3xl mx-auto text-balance">Depoimentos de médicos que atingiram resultados reais e consistentemente em sua vida e suas finanças.</p>
+                    </div>
+                    <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                        <div class="testimonial-card p-8 rounded-lg shadow-lg"><i class="fa-solid fa-quote-left text-4xl text-sky-500"></i><p class="text-slate-300 mt-4 mb-6">"Eu estava completamente perdida, trabalhando sem parar e sem ver o dinheiro render... A equipe da Ddica me ajudou a traçar um plano claro, e agora sinto que estou no controle do meu futuro"</p><div><p class="font-bold text-white">Dra. Marcella, Pediatra</p><p class="text-sm text-sky-400">São Paulo, SP</p></div></div>
+                        <div class="testimonial-card p-8 rounded-lg shadow-lg"><i class="fa-solid fa-quote-left text-4xl text-sky-500"></i><p class="text-slate-300 mt-4 mb-6">"Trabalhava muito e não via tanto resultado em meu patrimônio... Agora consigo enxergar aonde estava errando."</p><div><p class="font-bold text-white">Dr. Carlos, Cirurgião Plástico</p><p class="text-sm text-sky-400">Rio de Janeiro, RJ</p></div></div>
+                        <div class="testimonial-card p-8 rounded-lg shadow-lg"><i class="fa-solid fa-quote-left text-4xl text-sky-500"></i><p class="text-slate-300 mt-4 mb-6">"O que mais gostei foi a didática. Eles ensinam de verdade. Hoje entendo melhor meus investimentos e me sinto seguro para tomar decisões."</p><div><p class="font-bold text-white">Dr. Fernando, Ortopedista</p><p class="text-sm text-sky-400">Belo Horizonte, MG</p></div></div>
+                    </div>
+                     <div class="text-center mt-12">
+                        <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Ddica%21%20%F0%9F%92%AC" target="_blank" class="gradient-btn text-white font-bold py-4 px-10 rounded-full text-lg cta-button inline-block" data-origin="Depoimentos (Home)">
+                            Quero ser um membro da Ddica
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="metodo" class="py-16" style="background-color: #111827;">
+                <div class="container mx-auto px-6 text-white">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold relative section-title pb-4 font-title">Seu plano terapêutico é guiado pelo método PHD</h2>
+                        <p class="text-slate-300 mt-8 max-w-3xl mx-auto text-balance"><strong class="text-white">Personalizado, Humanizado, Dedicado.</strong> Aplicamos a mesma lógica que você usa na sua prática para te ajudar a equilibrar a sua vida: diagnóstico, tratamento e acompanhamento.</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        <div class="text-center"><div class="mx-auto w-20 h-20 rounded-full bg-sky-600 text-white flex items-center justify-center text-2xl font-bold border-4 border-slate-700 shadow-lg">1</div><h3 class="text-xl font-bold text-white mt-4 mb-2 font-title">Anamnese</h3><p class="text-slate-300">Uma investigação profunda da sua realidade para um diagnóstico preciso e a definição de metas claras.</p></div>
+                        <div class="text-center"><div class="mx-auto w-20 h-20 rounded-full bg-sky-600 text-white flex items-center justify-center text-2xl font-bold border-4 border-slate-700 shadow-lg">2</div><h3 class="text-xl font-bold text-white mt-4 mb-2 font-title">Diagnóstico</h3><p class="text-slate-300">A partir dos pontos chave identificados, conseguimos entender por onde começar e o caminho a seguir.</p></div>
+                        <div class="text-center"><div class="mx-auto w-20 h-20 rounded-full bg-sky-600 text-white flex items-center justify-center text-2xl font-bold border-4 border-slate-700 shadow-lg">3</div><h3 class="text-xl font-bold text-white mt-4 mb-2 font-title">Tratamento</h3><p class="text-slate-300">Filtramos o ruído do mercado para te apresentar as melhores soluções e te conectar com um vasto ecossistema de parceiros.</p></div>
+                    </div>
+                    <div class="text-center mt-12">
+                        <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Ddica%21%20%F0%9F%92%AC" target="_blank" class="gradient-btn text-white font-bold py-4 px-10 rounded-full text-lg cta-button inline-block" data-origin="Método PHD (Home)">Quero aprender pelo método PHD</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="bg-slate-900 text-white">
+            <div class="container mx-auto px-6 py-12">
+                <div class="grid grid-cols-1 lg:grid-cols-10 gap-10">
+                    <div class="lg:col-span-4 text-center lg:text-left"><h3 class="text-3xl font-extrabold tracking-tight gradient-logo inline-block font-title">Ddica</h3><p class="mt-4 text-slate-400 max-w-md mx-auto lg:mx-0">Cuidamos do seu futuro para que você possa focar no que faz de melhor.</p></div>
+                    <div class="lg:col-span-2 text-center lg:text-left"><h4 class="font-bold text-lg text-white tracking-wider font-title">Navegação</h4><ul class="mt-4 space-y-2"><li><a href="triagem-financeira.html" class="text-slate-400 hover:text-sky-400 transition">Triagem financeira</a></li><li><a href="metodo-phd.html" class="text-slate-400 hover:text-sky-400 transition">Método PHD</a></li><li><a href="sobre-nos.html" class="text-slate-400 hover:text-sky-400 transition">Sobre nós</a></li><li><a href="simuladores.html" class="text-slate-400 hover:text-sky-400 transition">Simuladores</a></li><li><a href="novidades.html" class="text-slate-400 hover:text-sky-400 transition">Novidades</a></li></ul></div>
+                    <div class="lg:col-span-2 text-center lg:text-left"><h4 class="font-bold text-lg text-white tracking-wider font-title">Institucional</h4><ul class="mt-4 space-y-2"><li><a href="politica-de-privacidade.html" class="text-slate-400 hover:text-sky-400 transition">Política de privacidade</a></li><li><a href="termos-de-uso.html" class="text-slate-400 hover:text-sky-400 transition">Termos de uso</a></li><li><a href="cookies.html" class="text-slate-400 hover:text-sky-400 transition">Cookies</a></li></ul></div>
+                    <div class="lg:col-span-2 text-center lg:text-left"><h4 class="font-bold text-lg text-white tracking-wider font-title">Contato</h4><ul class="mt-4 space-y-3 text-slate-400"><li class="flex items-center gap-2 justify-center lg:justify-start"><i class="fa-solid fa-envelope fa-fw"></i><span>contato@ddica.com.br</span></li><li class="flex items-center gap-2 justify-center lg:justify-start"><i class="fa-brands fa-whatsapp fa-fw"></i><span>(11) 96647-9058</span></li></ul><div class="mt-4 flex gap-4 justify-center lg:justify-start"><a href="https://www.linkedin.com/company/ddica" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-slate-400 hover:text-sky-400 transition text-2xl"><i class="fa-brands fa-linkedin"></i></a><a href="https://www.instagram.com/ddicasaudefinanceira/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-slate-400 hover:text-sky-400 transition text-2xl"><i class="fa-brands fa-instagram"></i></a></div></div>
+                </div>
+                <div class="mt-12 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm"><p>&copy; 2025 Ddica. Todos os direitos reservados. Uma consultoria de vida e finanças para médicos.</p></div>
+            </div>
+        </footer>
+
+    </div>
+    
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-slate-800 text-white p-4 z-50 transition-transform duration-500 transform translate-y-full">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
+            <p class="mb-3 md:mb-0 mr-4 text-slate-300">
+                Usamos cookies para melhorar sua experiência no site e analisar o tráfego. Ao clicar em "Aceitar", você concorda com o uso de cookies.
+                <a href="politica-de-privacidade.html" class="text-sky-400 hover:text-sky-300 underline ml-1">Política de Privacidade</a>.
+            </p>
+            <button id="accept-cookies" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex-shrink-0">
+                Aceitar e Continuar
+            </button>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Ddica%21%20%F0%9F%92%AC" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-40 hover:scale-110 transition-transform" data-origin="WhatsApp Flutuante (Home)">
+        <i class="fa-brands fa-whatsapp text-4xl"></i>
+    </a>
+    
+    <div id="contact-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md relative animate-fade-in">
+             <div class="p-6 text-center bg-slate-100 rounded-t-2xl border-b"><h3 class="text-2xl font-bold text-slate-800 font-title">Precisa de um Especialista?</h3><p class="text-sm text-slate-500 mt-1">Deixe seus dados que entraremos em contato.</p></div>
+             <div class="p-8">
+                <form id="contact-form" class="space-y-4">
+                    <div><label for="name" class="block text-sm font-semibold text-gray-700 mb-1">Nome</label><input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-sky-500 focus:border-sky-500" required></div>
+                    <div><label for="email" class="block text-sm font-semibold text-gray-700 mb-1">Email</label><input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-sky-500 focus:border-sky-500" required></div>
+                    <div><label for="phone" class="block text-sm font-semibold text-gray-700 mb-1">Whatsapp</label><input type="tel" id="phone" name="phone" placeholder="(XX) XXXXX-XXXX" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-sky-500 focus:border-sky-500" required></div>
+                    <button type="submit" class="w-full gradient-btn text-white p-3 rounded-lg font-bold text-lg cta-button mt-2">Falar com a Ddica</button>
+                </form>
+                <div id="form-feedback" class="hidden mt-4 text-center p-3 rounded-md"></div>
+             </div>
+             <button id="close-contact-modal-btn" class="absolute top-3 right-3 text-gray-400 hover:text-gray-800 transition-colors"><i class="fa-solid fa-xmark fa-lg"></i></button>
+        </div>
+    </div>
+    
+<script>
+    // URL de contato do WhatsApp (com a mensagem codificada)
+    const WHATSAPP_URL = 'https://wa.me/5519974073983?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Ddica%21%20%F0%9F%92%AC';
+    // Webhook para envio de leads do modal
+    const MAKE_WEBHOOK_URL = 'https://hook.us2.make.com/juj6aled15u2yci7ixygv3cixnqhveuc';
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // --- LÓGICA DO MENU MOBILE ---
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if(mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+        }
+
+        // --- LÓGICA DO MODAL DE CONTATO ---
+        const contactModal = document.getElementById('contact-modal');
+        // Usamos 'button' no JS anterior, mas mudamos para 'a' no HTML
+        const contactTriggers = document.querySelectorAll('.contact-trigger'); 
+        const closeContactModalBtn = document.getElementById('close-contact-modal-btn');
+        const contactForm = document.getElementById('contact-form');
+        const feedbackDiv = document.getElementById('form-feedback');
+        const phoneInput = document.getElementById('phone');
+        
+        // NOVO: ABRIR MODAL APENAS COM O BOTÃO NO FOOTER/NAV DESKTOP
+        const modalTriggers = document.querySelectorAll('.contact-trigger.hidden.lg\\:inline-block'); 
+        
+        // Remove listeners para os CTAs de WhatsApp direto e adiciona para o modal
+        if (contactModal && modalTriggers.length > 0 && closeContactModalBtn && contactForm) {
+            modalTriggers.forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    e.preventDefault(); // Impede o link direto de abrir
+                    contactModal.classList.remove('hidden');
+                });
+            });
+
+            closeContactModalBtn.addEventListener('click', () => contactModal.classList.add('hidden'));
+            contactModal.addEventListener('click', (e) => { if (e.target === contactModal) contactModal.classList.add('hidden'); });
+            
+            if(phoneInput) {
+                phoneInput.addEventListener('input', e => {
+                    let value = e.target.value.replace(/\D/g, '');
+                    value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                    value = value.replace(/(\d{5})(\d)/, '$1-$2');
+                    e.target.value = value.slice(0, 15);
+                });
+            }
+
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Enviando...';
+                
+                const leadData = { 
+                    nome: contactForm.name.value, 
+                    email: contactForm.email.value, 
+                    telefone: contactForm.phone.value, 
+                    origem: 'Popup de Contato (Home)' // Origem padrão para o modal
+                };
+                                
+                try {
+                    const response = await fetch(MAKE_WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify(leadData),
+                    });
+
+                    if (!response.ok) { throw new Error('Falha no envio dos dados.'); }
+                    
+                    feedbackDiv.textContent = 'Obrigado! Seus dados foram enviados. Você será redirecionado para o WhatsApp para darmos início ao contato.';
+                    feedbackDiv.className = 'mt-4 text-center p-3 rounded-md bg-green-100 text-green-800';
+                    feedbackDiv.classList.remove('hidden');
+                    contactForm.classList.add('hidden');
+                    
+                    setTimeout(() => {
+                        window.open(WHATSAPP_URL, '_blank'); // Abre o WhatsApp
+                        contactModal.classList.add('hidden');
+                        setTimeout(() => {
+                            contactForm.reset();
+                            contactForm.classList.remove('hidden');
+                            feedbackDiv.classList.add('hidden');
+                            submitButton.disabled = false;
+                            submitButton.textContent = 'Falar com a Ddica';
+                        }, 500);
+                    }, 3000);
+
+                } catch (error) {
+                    console.error("Erro ao enviar para o webhook: ", error);
+                    feedbackDiv.textContent = 'Ocorreu um erro. Por favor, tente novamente.';
+                    feedbackDiv.className = 'mt-4 text-center p-3 rounded-md bg-red-100 text-red-800';
+                    feedbackDiv.classList.remove('hidden');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Falar com a Ddica';
+                }
+            });
+        }
+        
+        // --- NOVO: LÓGICA DO BANNER DE COOKIES (LGPD) ---
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptCookiesBtn = document.getElementById('accept-cookies');
+
+        const isAccepted = localStorage.getItem('cookies_accepted_ddica');
+
+        if (!isAccepted) {
+            // Mostra o banner com animação
+            setTimeout(() => {
+                cookieBanner.classList.remove('translate-y-full');
+            }, 500);
+        }
+
+        if(acceptCookiesBtn) {
+            acceptCookiesBtn.addEventListener('click', () => {
+                localStorage.setItem('cookies_accepted_ddica', 'true');
+                cookieBanner.classList.add('translate-y-full'); // Esconde o banner
+            });
+        }
+    });
+</script>
+</body>
+</html>
